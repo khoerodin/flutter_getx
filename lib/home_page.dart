@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_getx/counter_app.dart';
 import 'package:flutter_getx/counter_app_set_state.dart';
 import 'package:flutter_getx/realtime_input_app.dart';
+import 'package:flutter_getx/simple_crud_app.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -50,7 +51,14 @@ class HomePage extends StatelessWidget {
             child: const Text('Realtime Input App'),
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SimpleCrudApp(),
+                ),
+              );
+            },
             child: const Text('Simple CRUD App'),
           ),
         ],
