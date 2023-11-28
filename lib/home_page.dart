@@ -39,7 +39,14 @@ class HomePage extends StatelessWidget {
             child: const Text('Counter App SetState'),
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const RealtimeInputApp(),
+                ),
+              );
+            },
             child: const Text('Realtime Input App'),
           ),
           ElevatedButton(
