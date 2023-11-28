@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getx/counter_app.dart';
+import 'package:flutter_getx/counter_app_set_state.dart';
+import 'package:flutter_getx/realtime_input_app.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -26,7 +28,14 @@ class HomePage extends StatelessWidget {
             child: const Text('Counter App'),
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const CounterAppSetState(),
+                ),
+              );
+            },
             child: const Text('Counter App SetState'),
           ),
           ElevatedButton(

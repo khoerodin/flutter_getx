@@ -1,17 +1,34 @@
+import 'package:d_method/d_method.dart';
 import 'package:flutter/material.dart';
-import 'package:get/state_manager.dart';
 
-class CounterApp extends StatelessWidget {
-  const CounterApp({super.key});
+class CounterAppSetState extends StatefulWidget {
+  const CounterAppSetState({super.key});
+
+  @override
+  State<CounterAppSetState> createState() => _CounterAppSetStateState();
+}
+
+class _CounterAppSetStateState extends State<CounterAppSetState> {
+  int counter = 1;
+
+  @override
+  void initState() {
+    print('initState()');
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    print('dispose()');
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     print('build()');
-    final counter = 1.obs;
-
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Counter App'),
+        title: const Text('Counter App SetState'),
         centerTitle: true,
       ),
       body: Center(
@@ -20,25 +37,23 @@ class CounterApp extends StatelessWidget {
           children: [
             IconButton.filled(
               onPressed: () {
-                counter.value -= 1;
-                print(counter);
+                counter -= 1;
+                setState(() {});
               },
               icon: const Icon(
                 Icons.remove,
               ),
             ),
             const SizedBox(width: 20),
-            Obx(() {
-              return Text(
-                '${counter.value}',
-                style: Theme.of(context).textTheme.displaySmall,
-              );
-            }),
+            Text(
+              '$counter',
+              style: Theme.of(context).textTheme.displaySmall,
+            ),
             const SizedBox(width: 20),
             IconButton.filled(
               onPressed: () {
-                counter.value += 1;
-                print(counter);
+                counter += 1;
+                setState(() {});
               },
               icon: const Icon(
                 Icons.add,
