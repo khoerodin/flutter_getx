@@ -1,7 +1,8 @@
+// ignore_for_file: avoid_print
+
 import 'package:d_input/d_input.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/state_manager.dart';
 
 class RealtimeInputApp extends StatefulWidget {
   const RealtimeInputApp({super.key});

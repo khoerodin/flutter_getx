@@ -1,4 +1,5 @@
-import 'package:d_method/d_method.dart';
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 
 class CounterAppSetState extends StatefulWidget {
